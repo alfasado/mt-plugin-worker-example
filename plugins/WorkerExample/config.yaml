@@ -1,0 +1,15 @@
+name: WorkerExample
+id:   WorkerExample
+key:  workerexample
+version: 0.1
+author_link: https://alfasado.net/
+author_name: Alfasado Inc.
+l10n_class: WorkerExample::L10N
+description: <__trans phrase="Movable Type's worker example.">
+callbacks:
+    # cms_post_save.entry: $workerexample::WorkerExample::Callbacks::_post_save_entry
+    data_api_post_save.entry: $workerexample::WorkerExample::Callbacks::_post_save_entry
+task_workers:
+    worker_example:
+        label: 'Multipost entry to foo.'
+        class: 'WorkerExample::Worker::MultiPost'
